@@ -89,7 +89,7 @@ void Mouse::OnMouseMove( int newx,int newy )
 	TrimBuffer();
 }
 
-void Mouse::OnLeftPressed( int x,int y )
+void Mouse::OnLeftPressed( int x_in,int y_in )
 {
 	leftIsPressed = true;
 
@@ -97,7 +97,7 @@ void Mouse::OnLeftPressed( int x,int y )
 	TrimBuffer();
 }
 
-void Mouse::OnLeftReleased( int x,int y )
+void Mouse::OnLeftReleased( int x_in,int y_in )
 {
 	leftIsPressed = false;
 
@@ -105,7 +105,7 @@ void Mouse::OnLeftReleased( int x,int y )
 	TrimBuffer();
 }
 
-void Mouse::OnRightPressed( int x,int y )
+void Mouse::OnRightPressed( int x_in,int y_in )
 {
 	rightIsPressed = true;
 
@@ -113,7 +113,7 @@ void Mouse::OnRightPressed( int x,int y )
 	TrimBuffer();
 }
 
-void Mouse::OnRightReleased( int x,int y )
+void Mouse::OnRightReleased( int x_in,int y_in )
 {
 	rightIsPressed = false;
 
@@ -121,13 +121,13 @@ void Mouse::OnRightReleased( int x,int y )
 	TrimBuffer();
 }
 
-void Mouse::OnWheelUp( int x,int y )
+void Mouse::OnWheelUp( int x_in,int y_in )
 {
 	buffer.push( Mouse::Event( Mouse::Event::WheelUp,*this ) );
 	TrimBuffer();
 }
 
-void Mouse::OnWheelDown( int x,int y )
+void Mouse::OnWheelDown( int x_in,int y_in )
 {
 	buffer.push( Mouse::Event( Mouse::Event::WheelDown,*this ) );
 	TrimBuffer();
